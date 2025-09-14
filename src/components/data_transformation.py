@@ -19,7 +19,7 @@ class DataTransformation:
     def __init__(self):
         self.data_transformation_config=DataTransformationConfig()
     
-    def get_data_transformer_objects(self):
+    def get_data_transformer_object(self):
         try:
             numerical_columns = ["writing score","reading score"]
             categorical_columns=[
@@ -64,7 +64,7 @@ class DataTransformation:
             test_df=pd.read_csv(test_path)
             logging.info("Read train and test data completed")
             logging.info("obtaining preprocessing object")
-            preprocessing_obj=self.get_data_transformer_objects()
+            preprocessing_obj=self.get_data_transformer_object()
             
             target_column_name="math score"
             numerical_columns = ["writing_score", "reading_score"]
